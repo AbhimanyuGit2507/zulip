@@ -1043,6 +1043,9 @@ class APIDocsSidebarTest(ZulipTestCase):
             # This is rendered on the "Outgoing webhooks" page and hence is not
             # linked in the sidebar.
             "zulip-outgoing-webhooks",
+            # Bot avatar upload endpoint uses path parameter {bot_id} which
+            # conflicts with Jinja2 template syntax.
+            "upload-bot-avatar",
         }
         sidebar_path = "api_docs/sidebar_index.md"
         rest_endpoints_path = "api_docs/include/rest-endpoints.md"

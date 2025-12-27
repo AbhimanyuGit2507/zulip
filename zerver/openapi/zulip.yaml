@@ -6578,12 +6578,20 @@ paths:
       operationId: upload-bot-avatar
       tags:
         - users
+      description: |
+        Upload and set a new avatar image for a bot user.
+
+        This endpoint is used to update a bot's avatar after the bot has been created.
+        The uploaded image will be cropped and resized to fit Zulip's avatar requirements.
       parameters:
         - name: bot_id
           in: path
-          required: true
+          description: |
+            The ID of the bot user.
           schema:
             type: integer
+          example: 12
+          required: true
       requestBody:
         required: true
         content:
@@ -6594,6 +6602,10 @@ paths:
                 file:
                   type: string
                   format: binary
+                  description: |
+                    The image file to upload as the bot's avatar.
+              required:
+                - file
       responses:
         "200":
           description: Success
