@@ -6575,7 +6575,7 @@ paths:
   /bots/{bot_id}/avatar:
     post:
       summary: Upload a bot avatar
-      operationId: uploadBotAvatar
+      operationId: upload-bot-avatar
       tags:
         - users
       parameters:
